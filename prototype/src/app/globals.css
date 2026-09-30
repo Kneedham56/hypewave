@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* HypeWave design tokens (PRD Section 11). Dark is the default and, for the
+   prototype, the only theme. */
+@theme {
+  --color-bg: #0b0b10;
+  --color-surface: #14141c;
+  --color-surface-2: #1c1c27;
+  --color-line: #2a2a3a;
+  --color-ink: #f4f4f8;
+  --color-muted: #a0a0b8;
+  --color-violet: #7c5cff;
+  --color-cyan: #22d3ee;
+  --color-pink: #ff4d8d;
+  --color-up: #b8ff3c;
+  --color-down: #ff5a5f;
+
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 16px;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: clip;
+}
+
+/* Every price uses tabular numerals so digits don't jump when they change */
+.nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.wave-text {
+  background: linear-gradient(90deg, var(--color-violet), var(--color-cyan) 50%, var(--color-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.wave-bg {
+  background: linear-gradient(120deg, var(--color-violet), var(--color-cyan) 55%, var(--color-pink));
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
